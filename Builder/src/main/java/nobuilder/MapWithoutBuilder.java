@@ -5,7 +5,7 @@ import model.SpecialCharacters;
 
 import java.util.List;
 
-public class Map {
+public class MapWithoutBuilder {
 
     public enum MapType{
         TOPOGRAPHIC, THEMATIC, WHEATER, GENERAL_REFERENCE
@@ -21,7 +21,7 @@ public class Map {
     MapLegend legend;
     List<SpecialCharacters> specialCharactersList;
 
-    public Map(Long id, String name, Double width, Double height, MapType type, Double scale, Double pitch, MapLegend legend, List<SpecialCharacters> specialCharactersList) {
+    public MapWithoutBuilder(Long id, String name, Double width, Double height, MapType type, Double scale, Double pitch, MapLegend legend, List<SpecialCharacters> specialCharactersList) {
         this.id = id;
         this.name = name;
         this.width = width;
