@@ -5,7 +5,7 @@ import nobuilder.SpecialCharacters;
 
 import java.util.List;
 
-public class WheaterMap implements MapBuilder {
+public class WeatherMap implements MapBuilder {
     @Override
     public List<SpecialCharacters> createSpecialCharacters() {
         return null;
