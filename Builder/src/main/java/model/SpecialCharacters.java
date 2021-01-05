@@ -1,4 +1,4 @@
-package nobuilder;
+package model;
 
 public class SpecialCharacters {
     Long id;

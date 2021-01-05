@@ -1,5 +1,8 @@
 package nobuilder;
 
+import model.MapLegend;
+import model.SpecialCharacters;
+
 import java.util.List;
 
 public class Map {

@@ -2,8 +2,8 @@ import implementedwithbuilder.MapBuilder;
 import implementedwithbuilder.MapDirector;
 import implementedwithbuilder.TopographyMap;
 import nobuilder.Map;
-import nobuilder.MapLegend;
-import nobuilder.SpecialCharacters;
+import model.MapLegend;
+import model.SpecialCharacters;
 
 import java.util.List;
 

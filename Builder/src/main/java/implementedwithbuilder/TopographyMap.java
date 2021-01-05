@@ -1,7 +1,7 @@
 package implementedwithbuilder;
 
-import nobuilder.MapLegend;
-import nobuilder.SpecialCharacters;
+import model.MapLegend;
+import model.SpecialCharacters;
 
 import java.util.List;
 
