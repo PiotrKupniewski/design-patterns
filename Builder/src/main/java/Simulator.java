@@ -18,14 +18,15 @@ public class Simulator {
         Map topographic = new Map(1L, "Topographic-1", 300.0, 400.0, Map.MapType.TOPOGRAPHIC, 0.000001, 10.0, topographicLegen, List.of(new SpecialCharacters(2L, "char2")));
         Map weather = new Map(1L, "Wheater-1", 500.0, 500.0, Map.MapType.WHEATER, 0.0001, 0.1, wheaterLegend, List.of(new SpecialCharacters(1L, "char1")));
 
+
         System.out.println(topographic);
         System.out.println(weather);
 
 
         //with builder
-        MapBuilder topographyBuilder = new TopographyMap("name", 300.0, 200.0, 0.00003, 10.0);
+        MapBuilder topographyMapBuilder = new TopographyMap("Topography-1D", 300.0, 200.0, 0.00003, 10.0);
         MapDirector director = new MapDirector();
-        implementedwithbuilder.Map topographic2 = director.createTopographyMap(topographyBuilder);
+        implementedwithbuilder.Map topographic2 = director.createTopographyMap(topographyMapBuilder);
 
         System.out.println(topographic2.toString());
 
