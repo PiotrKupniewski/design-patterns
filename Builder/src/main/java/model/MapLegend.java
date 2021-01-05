@@ -8,12 +8,4 @@ public class MapLegend {
         this.place = place;
         this.name = name;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPlace() {
-        return place;
-    }
 }

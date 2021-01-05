@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface MapBuilder {
 
-   List<SpecialCharacters> createSpecialCharacters();
-   MapLegend createMapLegend();
-   Map build();
+    List<SpecialCharacters> createSpecialCharacters();
+
+    MapLegend createMapLegend();
+
+    Map build();
 }

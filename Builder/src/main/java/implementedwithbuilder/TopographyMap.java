@@ -24,7 +24,7 @@ public class TopographyMap extends Map implements MapBuilder {
 
     @Override
     public MapLegend createMapLegend() {
-        this.legend = new  MapLegend("rightUpCorner","topographic");
+        this.legend = new MapLegend("rightUpCorner", "topographic");
         return legend;
     }
 
