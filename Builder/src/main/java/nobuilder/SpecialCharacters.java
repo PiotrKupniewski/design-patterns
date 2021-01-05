@@ -1,4 +1,4 @@
-package nodpimpl;
+package nobuilder;
 
 public class SpecialCharacters {
     Long id;

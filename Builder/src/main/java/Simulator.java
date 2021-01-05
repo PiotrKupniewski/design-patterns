@@ -1,11 +1,10 @@
-import dpimpl.MapBuilder;
-import dpimpl.MapDirector;
-import dpimpl.TopographyMap;
-import nodpimpl.Map;
-import nodpimpl.MapLegend;
-import nodpimpl.SpecialCharacters;
+import implementedwithbuilder.MapBuilder;
+import implementedwithbuilder.MapDirector;
+import implementedwithbuilder.TopographyMap;
+import nobuilder.Map;
+import nobuilder.MapLegend;
+import nobuilder.SpecialCharacters;
 
-import java.nio.MappedByteBuffer;
 import java.util.List;
 
 public class Simulator {
@@ -24,7 +23,7 @@ public class Simulator {
         //with builder
         MapBuilder builder = new TopographyMap("name", 300.0, 200.0, 0.00003, 10.0);
         MapDirector director = new MapDirector();
-        dpimpl.Map topographic2 = director.createTopographyMap(builder);
+        implementedwithbuilder.Map topographic2 = director.createTopographyMap(builder);
 
         System.out.println(topographic2.toString());
 

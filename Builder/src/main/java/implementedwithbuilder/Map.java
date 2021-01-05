@@ -1,6 +1,4 @@
-package dpimpl;
-
-import nodpimpl.MapLegend;
+package implementedwithbuilder;
 
 public abstract class Map {
 

@@ -1,7 +1,7 @@
-package dpimpl;
+package implementedwithbuilder;
 
-import nodpimpl.MapLegend;
-import nodpimpl.SpecialCharacters;
+import nobuilder.MapLegend;
+import nobuilder.SpecialCharacters;
 
 import java.util.List;
 

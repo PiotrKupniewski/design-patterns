@@ -1,4 +1,4 @@
-package nodpimpl;
+package nobuilder;
 
 public class MapLegend {
     String place;
