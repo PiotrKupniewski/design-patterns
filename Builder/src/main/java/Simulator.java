@@ -2,6 +2,7 @@ import implementedwithbuilder.Map;
 import implementedwithbuilder.MapBuilder;
 import implementedwithbuilder.MapDirector;
 import implementedwithbuilder.TopographyMap;
+import implementedwithbuilder.innerstatic.MapWithInnerBuilder;
 import model.MapLegend;
 import model.SpecialCharacters;
 import nobuilder.MapWithoutBuilder;
@@ -31,6 +32,19 @@ public class Simulator {
 
         System.out.println(topographic2.toString());
 
+        //with statis fluent builder
 
+        MapWithInnerBuilder map = new MapWithInnerBuilder.MapBuilder()
+                .id(1L)
+                .name("Topography")
+                .width(300.0)
+                .height(300.0)
+                .scale(0.0001)
+                .pitch(0.0002)
+                .specialCharacters(List.of(new SpecialCharacters(1L, "kiosk")))
+                .legend(new MapLegend("rightUp", "topoLegend"))
+                .build();
+
+        System.out.println("map with inner " + map.toString());
     }
 }
