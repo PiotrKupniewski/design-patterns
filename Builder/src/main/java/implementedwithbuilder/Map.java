@@ -8,6 +8,7 @@ public abstract class Map {
     private final Double scale;
     private final Double pitch;
 
+
     public Map(String name, Double width, Double height, Double scale, Double pitch) {
         this.name = name;
         this.width = width;
