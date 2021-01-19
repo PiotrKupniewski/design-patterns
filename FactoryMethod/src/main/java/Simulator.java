@@ -1,14 +1,26 @@
+import factoryMethod.BikeRouteFinder;
+import factoryMethod.CarRouteFinder;
 import factoryMethod.RouteFactory;
 import factoryMethod.RouteFinder;
 
 public class Simulator {
 
     public static void main(String[] args) {
-        RouteFactory routeFactory = new RouteFactory();
-        RouteFinder bikeRouteFinder = routeFactory.createRouteFinder("bike");
+
+        //without design pattern
+        RouteFinder bikeRouteFinder = new BikeRouteFinder();
         bikeRouteFinder.findDestinationRoute();
 
-        RouteFinder carRoouteFinder = routeFactory.createRouteFinder("car");
-        carRoouteFinder.findDestinationRoute();
+        CarRouteFinder carRouteFinder = new CarRouteFinder();
+        carRouteFinder.findDestinationRoute();
+
+
+        //with desing patter
+        RouteFactory routeFactory = new RouteFactory();
+        RouteFinder bikeRouteFinderWithFactory = routeFactory.createRouteFinder("bike");
+        bikeRouteFinderWithFactory.findDestinationRoute();
+
+        RouteFinder carRouteFinderWithFactory = routeFactory.createRouteFinder("car");
+        carRouteFinderWithFactory.findDestinationRoute();
     }
 }
