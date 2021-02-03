@@ -2,6 +2,7 @@ import factoryMethod.BikeRouteFinder;
 import factoryMethod.CarRouteFinder;
 import factoryMethod.RouteFactory;
 import factoryMethod.RouteFinder;
+import factorymethod2.Source;
 
 public class Simulator {
 
@@ -22,5 +23,14 @@ public class Simulator {
 
         RouteFinder carRouteFinderWithFactory = routeFactory.createRouteFinder("car");
         carRouteFinderWithFactory.findDestinationRoute();
+
+
+        // with design pattern 2
+        Source routeSource = Source.createRoadSource();
+        Source cinemasSource = Source.createCinemasSource();
+
+        System.out.println("route source " + routeSource);
+        System.out.println("route cinemasSource " + cinemasSource);
+
     }
 }
