@@ -1,5 +1,8 @@
 package factorymethod2;
 
-public class CinemasSource implements Source{
-
+class CinemasSource implements Source {
+    @Override
+    public String printWhoAmI() {
+        return "Im Cinema source";
+    }
 }

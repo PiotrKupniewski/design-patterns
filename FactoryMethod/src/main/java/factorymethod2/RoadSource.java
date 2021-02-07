@@ -1,5 +1,8 @@
 package factorymethod2;
 
-public class RoadSource implements Source{
-
+class RoadSource implements Source {
+    @Override
+    public String printWhoAmI() {
+        return "Im Road source";
+    }
 }
