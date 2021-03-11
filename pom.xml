@@ -11,6 +11,7 @@
     <modules>
         <module>Builder</module>
         <module>FactoryMethod</module>
+        <module>Strategy</module>
     </modules>
 
 
