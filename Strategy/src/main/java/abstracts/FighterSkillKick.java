@@ -1,5 +1,5 @@
 package abstracts;
 
-public interface Kick {
+public interface FighterSkillKick {
     void kick(Fighter enemy);
 }
