@@ -1,6 +1,7 @@
 package scanners;
 
-public interface LabelScannerAbstract {
+public interface LabelScanner {
   String getProvider();
+
   String distinguishQualityBag();
 }

@@ -1,34 +1,34 @@
 import org.junit.jupiter.api.Test;
 import productline.BrazilianAromaProductionLine;
 import productline.PolkawProductionLine;
-import productline.ProductionLine;
 import productline.guidelines.ProductionGuidelines;
-import scanner.LabelScanner;
+import scanners.BarcodeScanner;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ProductionLineTest {
 
-  @Test
-  public void shouldReturnProperGuideline(){
-    LabelScanner brazilan = new LabelScanner("BrazilianAroma-A");
-    LabelScanner brazilanUnusupported = new LabelScanner("BrazilianAroma-G");
-    LabelScanner polkawEven = new LabelScanner("Polkaw-1234534");
-    LabelScanner polkawOdd = new LabelScanner("Polkaw-123453");
+  ProductionGuidelines bz = new ProductionGuidelines(ProductionGuidelines.CoffeeType.GOOD, ProductionGuidelines.PackageType.KG_1);
+  ProductionGuidelines polakwEvenGuide = new ProductionGuidelines(ProductionGuidelines.CoffeeType.GOOD, ProductionGuidelines.PackageType.KG_1);
+  ProductionGuidelines polakwOddGuide = new ProductionGuidelines(ProductionGuidelines.CoffeeType.VERY_GOOD, ProductionGuidelines.PackageType.KG_1);
 
-    ProductionLine brazilianProductionLine = new BrazilianAromaProductionLine();
-    ProductionLine brazlizianUnsupportedProductionLine = new BrazilianAromaProductionLine();
-    ProductionLine polkawEvenProductionLine = new PolkawProductionLine();
-    ProductionLine polawOddProductionLine = new PolkawProductionLine();
+
+  @Test
+  public void shouldReturnProperGuideline() {
+    var brazilan = new BarcodeScanner("BrazilianAroma-A");
+    var brazilanUnusupported = new BarcodeScanner("BrazilianAroma-G");
+    var polkawEven = new BarcodeScanner("Polkaw-1234534");
+    var polkawOdd = new BarcodeScanner("Polkaw-123453");
+
+    var brazilianProductionLine = new BrazilianAromaProductionLine();
+    var brazlizianUnsupportedProductionLine = new BrazilianAromaProductionLine();
+    var polkawEvenProductionLine = new PolkawProductionLine();
+    var polawOddProductionLine = new PolkawProductionLine();
 
     var bzProductionGuideline = brazilianProductionLine.getProductionGuideline(brazilan);
     var polkawEvenGuideline = polkawEvenProductionLine.getProductionGuideline(polkawEven);
     var polawOddGuideline = polawOddProductionLine.getProductionGuideline(polkawOdd);
-
-
-    ProductionGuidelines bz = new ProductionGuidelines(LabelScanner.CoffeType.GOOD, LabelScanner.PackageType.KG_1);
-    ProductionGuidelines polakwEvenGuide = new ProductionGuidelines(LabelScanner.CoffeType.GOOD, LabelScanner.PackageType.KG_1);
-    ProductionGuidelines polakwOddGuide = new ProductionGuidelines(LabelScanner.CoffeType.VERY_GOOD, LabelScanner.PackageType.KG_1);
 
     assertEquals(bz, bzProductionGuideline);
     assertEquals(polakwEvenGuide, polkawEvenGuideline);

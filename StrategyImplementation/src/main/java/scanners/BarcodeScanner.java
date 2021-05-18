@@ -4,26 +4,17 @@ import lombok.NonNull;
 import lombok.Value;
 
 @Value
-public class LabelScanner implements LabelScannerAbstract{
+public class BarcodeScanner implements LabelScanner {
+
+  @NonNull String barcode;
+
   @Override
   public String getProvider() {
-    return null;
+    return this.barcode.split("-")[0];
   }
 
   @Override
   public String distinguishQualityBag() {
-    return null;
+    return this.barcode.split("-")[1];
   }
-
-
-  //  @NonNull  String barcode;
-//
-//  public String getProvider(){
-//    return this.barcode.split("-")[0];
-//  }
-//
-//  public String getCoffeeQuality(){
-//    return this.barcode.split("-")[1];
-//  }
-
 }

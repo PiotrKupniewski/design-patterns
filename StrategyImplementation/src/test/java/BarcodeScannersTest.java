@@ -1,18 +1,18 @@
 import org.junit.jupiter.api.Test;
-import scanners.LabelScanner;
+import scanners.BarcodeScanner;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class LabelScannersTest {
+public class BarcodeScannersTest {
 
   @Test
-  public void shouldScannerBarcode(){
+  public void shouldScannerBarcode() {
     String barcode = "BrazillianAroma-A";
 
-     var labelScanner = new LabelScanner(barcode);
+    var labelScanner = new BarcodeScanner(barcode);
 
-     assertEquals("BrazillianAroma", labelScanner.getProvider());
-     assertEquals("A", labelScanner.getCoffeeQuality());
+    assertEquals("BrazillianAroma", labelScanner.getProvider());
+    assertEquals("A", labelScanner.distinguishQualityBag());
 
   }
 }

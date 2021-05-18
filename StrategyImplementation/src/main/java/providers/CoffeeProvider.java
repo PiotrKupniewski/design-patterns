@@ -2,11 +2,11 @@ package providers;
 
 import lombok.Value;
 import productline.ProductionLine;
-import scanner.LabelScanner;
+import scanners.LabelScanner;
 
 @Value
 class CoffeeProvider {
   String name;
-  LabelScanner labelScanner;
+  LabelScanner barcodeScanner;
   ProductionLine productionLine;
 }
