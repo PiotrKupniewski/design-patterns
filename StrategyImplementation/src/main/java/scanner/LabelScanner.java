@@ -1,3 +1,5 @@
+package scanner;
+
 import lombok.NonNull;
 import lombok.Value;
 
