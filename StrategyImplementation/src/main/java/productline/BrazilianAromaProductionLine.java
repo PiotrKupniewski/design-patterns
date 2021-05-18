@@ -1,4 +1,9 @@
-public class BrazilianAromaProductionLine implements ProductionLine{
+package productline;
+
+import productline.guidelines.ProductionGuidelines;
+import scanner.LabelScanner;
+
+public class BrazilianAromaProductionLine implements ProductionLine {
   @Override
   public ProductionGuidelines getProductionGuideline(LabelScanner scanner) {
     final var coffeeQuality = scanner.getCoffeeQuality();
