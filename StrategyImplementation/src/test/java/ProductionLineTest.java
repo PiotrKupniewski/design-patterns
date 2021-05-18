@@ -1,8 +1,8 @@
 import org.junit.jupiter.api.Test;
-import productline.BrazilianAromaProductionLine;
-import productline.PolkawProductionLine;
+import productline.impl.BrazilianAromaProductionLine;
+import productline.impl.PolkawProductionLine;
 import productline.guidelines.ProductionGuidelines;
-import scanners.BarcodeScanner;
+import scanners.impl.BarcodeScanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

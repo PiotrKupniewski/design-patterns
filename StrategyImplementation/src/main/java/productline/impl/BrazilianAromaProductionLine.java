@@ -1,5 +1,6 @@
-package productline;
+package productline.impl;
 
+import productline.ProductionLine;
 import productline.guidelines.ProductionGuidelines;
 import scanners.LabelScanner;
 

@@ -1,4 +1,4 @@
-package providers;
+package domain;
 
 import lombok.Value;
 import productline.ProductionLine;

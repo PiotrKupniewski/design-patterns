@@ -1,7 +1,8 @@
-package scanners;
+package scanners.impl;
 
 import lombok.NonNull;
 import lombok.Value;
+import scanners.LabelScanner;
 
 @Value
 public class BarcodeScanner implements LabelScanner {

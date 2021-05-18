@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-import scanners.BarcodeScanner;
+import scanners.impl.BarcodeScanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
