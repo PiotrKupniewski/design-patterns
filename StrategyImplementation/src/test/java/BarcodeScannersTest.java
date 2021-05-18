@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-import scanner.LabelScanner;
+import scanners.LabelScanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
