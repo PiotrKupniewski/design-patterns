@@ -1,3 +1,5 @@
+package scan;
+
 import lombok.Value;
 
 import java.util.List;
