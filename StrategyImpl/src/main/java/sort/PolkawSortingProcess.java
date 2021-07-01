@@ -6,11 +6,11 @@ import scan.Truck;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class PolkawSortingProcess implements SortingProcess{
+public class PolkawSortingProcess implements SortingProcess{
 
   @Override
-  public List<SortedCoffeeBag> sort(Truck truck) {
-    return truck.getBags().stream()
+  public List<SortedCoffeeBag> sort(List<CoffeeBag> bags) {
+    return bags.stream()
         .map(bag -> new SortedCoffeeBag(chooseCoffeeTypeBasedOnLabel(bag), bag.getLabel()))
         .collect(Collectors.toList());
   }

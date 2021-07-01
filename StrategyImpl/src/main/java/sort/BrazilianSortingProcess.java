@@ -6,15 +6,16 @@ import scan.Truck;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class BrazilianSortingProcess implements SortingProcess{
+public class BrazilianSortingProcess implements SortingProcess{
 
   @Override
-  public List<SortedCoffeeBag> sort(Truck truck) {
-    return truck.getBags().stream()
+  public List<SortedCoffeeBag> sort(List<CoffeeBag> bags) {
+    return bags.stream()
         .filter(bag -> !bag.getLabel().getLabelName().isEmpty())
         .map(bag -> new SortedCoffeeBag(chooseCoffeeTypeBasedOnLabel(bag), bag.getLabel()))
         .collect(Collectors.toList());
   }
+
   @Override
   public CoffeeBag.CoffeeQuality chooseCoffeeTypeBasedOnLabel(CoffeeBag coffeeBag) {
     if (coffeeBag.getLabel().getLabelName().startsWith("A")) {
