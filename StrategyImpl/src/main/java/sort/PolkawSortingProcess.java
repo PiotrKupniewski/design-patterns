@@ -20,6 +20,10 @@ public class PolkawSortingProcess implements SortingProcess{
     var labelName = coffeeBag.getLabel().getLabelName();
     var length = coffeeBag.getLabel().getLabelName().length();
 
+    if(labelName.isEmpty()){
+      throw new UnsupportedOperationException("Empty label");
+    }
+
     final var bitwise = Character.getNumericValue(labelName.charAt(length - 1)) & 1;
     if (bitwise == 1 ) {
       return CoffeeBag.CoffeeQuality.ŚWIETNA;
