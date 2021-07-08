@@ -1,12 +1,9 @@
 import org.junit.jupiter.api.Test;
-import pack.PackageProcess;
-import pack.PackageProcessFactory;
 import pack.PackagedCoffeeBag;
 import scan.CoffeeBag;
 import scan.Label;
 import scan.LabelScanner;
 import scan.Truck;
-import sort.SortingProcessFactory;
 
 import java.util.List;
 
@@ -20,7 +17,7 @@ public class SimulationTest {
     //given
     List<CoffeeBag> polkawBags = List.of(
         new CoffeeBag(new Label("B1")),
-        new CoffeeBag(new Label("")),
+//        new CoffeeBag(new Label("")),
         new CoffeeBag(new Label("452")),
         new CoffeeBag(new Label("555")),
         new CoffeeBag(new Label("2")),
@@ -32,15 +29,11 @@ public class SimulationTest {
     //when
     List<PackagedCoffeeBag> packagedCoffeeBags = runProcess(polkawBags, polkawLabel);
 
-    //excpected
-    PackagedCoffeeBag wyborna2kg = new PackagedCoffeeBag(CoffeeBag.CoffeeQuality.WYBORNA, 2.0);
-    PackagedCoffeeBag dobra1kg = new PackagedCoffeeBag(CoffeeBag.CoffeeQuality.DOBRA, 1.0);
-    PackagedCoffeeBag swietna1kg = new PackagedCoffeeBag(CoffeeBag.CoffeeQuality.ŚWIETNA, 1.0);
+    final var dobraCount = countBagsBasedOnQuality(CoffeeBag.CoffeeQuality.DOBRA, packagedCoffeeBags);
+    final var świetnaCount = countBagsBasedOnQuality(CoffeeBag.CoffeeQuality.ŚWIETNA, packagedCoffeeBags);
 
-    //then
-    assertEquals(wyborna2kg, packagedCoffeeBags.get(5));
-    assertEquals(swietna1kg, packagedCoffeeBags.get(3));
-    assertEquals(dobra1kg, packagedCoffeeBags.get(2));
+    assertEquals(2, dobraCount);
+    assertEquals(3, świetnaCount);
   }
 
 
@@ -62,16 +55,21 @@ public class SimulationTest {
     //when
     List<PackagedCoffeeBag> packagedCoffeeBags = runProcess(bags, brazilianaLabel);
 
-    //excpected
-    PackagedCoffeeBag wyborna2kg = new PackagedCoffeeBag(CoffeeBag.CoffeeQuality.WYBORNA, 2.0);
-    PackagedCoffeeBag dobra1kg = new PackagedCoffeeBag(CoffeeBag.CoffeeQuality.DOBRA, 1.0);
-    PackagedCoffeeBag swietna1kg = new PackagedCoffeeBag(CoffeeBag.CoffeeQuality.ŚWIETNA, 1.0);
+    final var dobraCount = countBagsBasedOnQuality(CoffeeBag.CoffeeQuality.DOBRA, packagedCoffeeBags);
+    final var wybornaCount = countBagsBasedOnQuality(CoffeeBag.CoffeeQuality.WYBORNA, packagedCoffeeBags);
+    final var świetnaCount = countBagsBasedOnQuality(CoffeeBag.CoffeeQuality.ŚWIETNA, packagedCoffeeBags);
+
+    assertEquals(2, dobraCount);
+    assertEquals(2, wybornaCount);
+    assertEquals(2, świetnaCount);
 
     //then
-    assertEquals(wyborna2kg, packagedCoffeeBags.get(5));
-    assertEquals(swietna1kg, packagedCoffeeBags.get(3));
-    assertEquals(dobra1kg, packagedCoffeeBags.get(2));
+  }
 
+  private long countBagsBasedOnQuality(CoffeeBag.CoffeeQuality quality, List<PackagedCoffeeBag> packagedCoffeeBags) {
+   return packagedCoffeeBags.stream()
+        .filter(x -> x.getQuality() == quality)
+        .count();
   }
 
   private List<PackagedCoffeeBag> runProcess(List<CoffeeBag> bags, Label label) {
