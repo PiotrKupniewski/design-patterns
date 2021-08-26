@@ -1,4 +1,8 @@
+import comparator.ProductComparator;
+import identifier.ProductIdentififer;
 import lombok.RequiredArgsConstructor;
+import model.Product;
+import parser.ProductReportParser;
 
 import java.util.List;
 

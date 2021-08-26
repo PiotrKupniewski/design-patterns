@@ -1,3 +1,10 @@
+import comparator.BestDealComparator;
+import comparator.ProductComparator;
+import identifier.DBProductIdentifier;
+import identifier.ProductIdentififer;
+import parser.JsonProductParser;
+import parser.ProductReportParser;
+
 public class Simulation {
   public static void main(String[] args) {
 
@@ -22,7 +29,9 @@ public class Simulation {
 
 
     DealFinder dealFinder = new DealFinder(parser, identifier, comparator);
+    var bestDeals = dealFinder.findGoodPrices();
 
-
+    bestDeals.stream()
+        .forEach(System.out::println);
   }
 }
