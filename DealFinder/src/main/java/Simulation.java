@@ -17,11 +17,11 @@ public class Simulation {
     String report = "{Papier-Toaletowy:2.25},{Szkło kontaktowe:1.64}";
 
     ProductReportParser parser = new JsonProductParser(report);
-    ProductIdentififer identififer = new DBProductIdentifier();
+    ProductIdentififer identifier = new DBProductIdentifier();
     ProductComparator comparator = new BestDealComparator();
 
 
-    DealFinder dealFinder = new DealFinder(parser, identififer, comparator);
+    DealFinder dealFinder = new DealFinder(parser, identifier, comparator);
 
 
   }
