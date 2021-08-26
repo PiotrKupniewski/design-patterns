@@ -10,8 +10,19 @@ public class Simulation {
    że jest ona gotowa na różne potrzeby i technologie utzymującej dane o sklepach i raportach cen.
    Powiedzmy, że dla pierwszej prezentacji jeżeli produkt jest w sklepie to jest on "okazją".*/
 
-    //
-    // znajdź okazję
+    //pobierz raport produktóœ i cen
+    //wyszukaj produktu w bazie danych
+    //poróznwaj cenę
+
+    String report = "{Papier-Toaletowy:2.25},{Szkło kontaktowe:1.64}";
+
+    ProductReportParser parser = new JsonProductParser(report);
+    ProductIdentififer identififer = new DBProductIdentifier();
+    ProductComparator comparator = new BestDealComparator();
+
+
+    DealFinder dealFinder = new DealFinder(parser, identififer, comparator);
+
 
   }
 }
