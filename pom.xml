@@ -12,6 +12,7 @@
         <module>Builder</module>
         <module>Strategy</module>
 	      <module>StrategyImpl</module>
+	    <module>GoodPriceFinder</module>
     </modules>
 
     <dependencies>
