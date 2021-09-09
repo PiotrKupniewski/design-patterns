@@ -9,8 +9,6 @@ import java.util.List;
 public
 class JsonProductParser implements ProductReportParser{
 
-  private final String report;
-
   @Override
   public List<Product> parseReport() {
     return null;
